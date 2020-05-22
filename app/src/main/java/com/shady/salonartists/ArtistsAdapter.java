@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ArtistsAdapterViewHolder> {
+    
     private List<Artist> mArtistsData = new ArrayList<>();
 
 
@@ -53,17 +54,15 @@ public class ArtistsAdapter extends RecyclerView.Adapter<ArtistsAdapter.ArtistsA
 
         String posterURL = mArtistsData.get(position).getImage();
 
-        Picasso.get()
-                .load(posterURL)
-                .placeholder(R.drawable.test)
-                .error(R.drawable.test)
-                // To fit image into imageView
-                .fit()
-                // To prevent fade animation
-                .noFade()
-                .into(holder.mPosterImageView);
+            Picasso.get()
+                    .load(posterURL)
+                    // To fit image into imageView
+                    .fit()
+                    // To prevent fade animation
+                    .noFade()
+                    .into(holder.mPosterImageView);
 
-        holder.mNameTextView.setText(mArtistsData.get(position).getName());
+            holder.mNameTextView.setText(mArtistsData.get(position).getName());
 
     }
 
