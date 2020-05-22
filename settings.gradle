@@ -1,0 +1,2 @@
+rootProject.name='Salon Artists'
+include ':app'
